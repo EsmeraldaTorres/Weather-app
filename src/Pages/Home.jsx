@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 
 // Components
-import Loader from "../Components/General/Loader";
+import Loader from "../Components/Custom/Loader";
 import Form from "../Components/Home/Form"
-import Header from "../Components/General/Header";
+import Header from "../Components/Custom/Header";
 import City from "../Components/Home/City"
 import FetchError from "./FetchError"
 import WeatherImage from "../Components/Home/WeatherImage";
@@ -26,18 +26,16 @@ const Home = () =>{
   // FUNCTIONS
   const handleSearchWeather = async e => {
     e.preventDefault();
-    // Para limpiar la respuesta anterior
     setApiWeather(null);
-    // para que se muestre el loading
     setLoader(true);
-    // setError()
+    setError(true)
     try{
-        const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
-        const response = await fetch(API);
-        const result = await response.json();
-        setLoader(false);
-        console.log(result)
-        console.log(typeof(result.cod))
+      const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
+      const response = await fetch(API);
+      const result = await response.json();
+      setLoader(false);
+      console.log(result)
+      console.log(typeof(result.cod))
         if(result.cod === 200){
           setError(false)
           setApiWeather(result)
@@ -45,12 +43,11 @@ const Home = () =>{
         }else {;
           setError(result.message);
         }
-    }   catch(e){
-        setLoader(false)
-        console.log(e)
+    }catch(e){
+      setLoader(false)
+      console.log(e)
     }
   };
-  console.log(apiWeather)
 
   return (
     <div>

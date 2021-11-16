@@ -1,6 +1,6 @@
 import React from "react";
 
-// styles
+// styles and gif
 import weathercloud from "../../assets/img/weathercloud.gif"
 import "./WeatherImage.styles.css"
 

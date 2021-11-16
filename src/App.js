@@ -9,7 +9,6 @@ import Information from "./Pages/Information";
 
 function App() {
   //JSX
-
   return (
     <BrowserRouter>
       <Switch>

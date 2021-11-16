@@ -1,10 +1,6 @@
 import React from "react";
 
-import cold from "../../assets/img/cold.gif"
-import tempered from "../../assets/img/tempered.jpeg"
-import heat from "../../assets/img/Heat.gif"
-
-const PrincipalCard = ({cityName,temperature,icon,temper,max_temp,min_temp})=>{
+const PrincipalCard = ({cityName,icon,temper,max_temp,min_temp})=>{
     return(
       <>
       <div className="border bg-white justify-around w-full my-4 font-bold text-xl md:text-2xl lg:text-3xl rounded-3xl p-4">
